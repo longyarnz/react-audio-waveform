@@ -1,0 +1,311 @@
+.audio-section {
+    flex-grow: 1;
+    height: 58px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background: linear-gradient(90deg, #b74dc3, #6610ff);
+    color: #fff;
+    padding-top: 3px;
+    display: flex;
+    flex-direction: row;
+
+    margin: 100px auto;
+    width:60%;
+    
+}
+
+.audio-section div:first-child {
+    flex-grow: 1;
+}
+
+.player-wrapper {
+    position: relative;
+    padding-top: 56.25%/* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ff-audio .white {
+    color: #fff;
+}
+
+.ff-audio .rounded {
+    border-radius: 3px;
+}
+
+.ff-audio .bg-top {
+    background-position: top;
+}
+
+.ff-audio .bg-cover {
+    background-size: cover;
+}
+
+.ff-audio .audio-speedup {
+    filter: invert(0.25) sepia(1) saturate(85) hue-rotate(315deg) brightness(6);
+}
+
+.ff-audio .relative {
+    position: relative;
+}
+
+.ff-audio .py2 {
+    padding-top: 16px;
+    padding-top: 1rem;
+    padding-bottom: 16px;
+    padding-bottom: 1rem;
+}
+
+.ff-audio .muted {
+    opacity: .5;
+}
+
+.ff-audio .bg-black, .bg-dark-gray {
+    background-color: #111;
+}
+
+.ff-audio .left-0 {
+    left: 0;
+}
+
+.ff-audio .bottom-0 {
+    bottom: 0;
+}
+
+.ff-audio .right-0 {
+    right: 0;
+}
+
+.ff-audio .top-0 {
+    top: 0;
+}
+
+.ff-audio .absolute {
+    position: absolute;
+}
+
+.ff-audio .z1 {
+    z-index: 1;
+}
+
+.ff-audio .relative {
+    position: relative;
+}
+
+.ff-audio .center {
+    text-align: center;
+}
+
+.ff-audio .mb0 {
+    margin-bottom: 0;
+}
+
+.ff-audio .nowrap {
+    white-space: nowrap;
+}
+
+.ff-audio .caps {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+.ff-audio .m0 {
+    margin: 0;
+}
+
+.ff-audio .flex-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.ff-audio .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 50px;
+}
+
+.ff-audio .z1 {
+    z-index: 1;
+}
+
+.ff-audio .relative {
+    position: relative;
+}
+
+.ff-audio .px2 {
+    padding-left: 16px;
+    padding-left: 1rem;
+    padding-right: 16px;
+    padding-right: 1rem;
+}
+
+.ff-audio .rounded {
+    border-radius: 3px;
+    transition: all 0.5s ease;
+}
+
+.ff-audio .button-transparent {
+    position: relative;
+    z-index: 2;
+    color: inherit;
+    background-color: transparent;
+    border-radius: 0;
+    border: 1px solid transparent;
+}
+
+.ff-audio .flex-none {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+}
+
+.ff-audio .mr2 {
+    margin-right: 16px;
+    margin-right: 1rem;
+}
+
+.ff-audio .h2, .ff-audio h2 {
+    font-size: 24px;
+    font-size: 1.5rem;
+}
+
+.ff-audio .button, .button:after, .ff-audio .button:before, button, button:after, button:before {
+    box-sizing: border-box;
+}
+
+.ff-audio .button, .ff-audio button {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+    padding: 8px 16px;
+    padding: .5rem 1rem;
+    margin: 0;
+    height: auto;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    -webkit-appearance: none;
+}
+
+.ff-audio .sb-soundplayer-icon {
+    width: 1em;
+    height: 1em;
+    position: relative;
+    vertical-align: middle;
+}
+
+.ff-audio svg {
+    max-height: 100%;
+}
+
+.ff-audio .flex>div {
+    box-sizing: border-box;
+}
+
+.ff-audio .flex-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.ff-audio .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.ff-audio .mr2 {
+    margin-right: 16px;
+    margin-right: 1rem;
+}
+
+.ff-audio .sb-soundplayer-volume {
+    position: relative;
+}
+
+.ff-audio .rounded {
+    border-radius: 3px;
+}
+
+.ff-audio .button-transparent {
+    position: relative;
+    z-index: 2;
+    color: inherit;
+    background-color: transparent;
+    border-radius: 0;
+    border: 1px solid transparent;
+}
+
+.ff-audio .flex-none {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+}
+
+.ff-audio .h2, .ff-audio h2 {
+    font-size: 24px;
+    font-size: 1.5rem;
+}
+
+.ff-audio .flex>div {
+    box-sizing: border-box;
+}
+
+.ff-audio .sb-soundplayer-volume div {
+    overflow: hidden;
+    width: 0;
+    transition: width .2s ease-out;
+    position: relative;
+}
+
+.ff-audio .flex>div {
+    box-sizing: border-box;
+}
+
+.ff-audio .bg-darken-3 {
+    background-color: rgba(0, 0, 0, .25);
+}
+
+.ff-audio .rounded {
+    border-radius: 3px;
+}
+
+.ff-audio .flex-auto {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.ff-audio .sb-soundplayer-progress-container {
+    background-color: #a167ff;
+    height: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ff-audio .bg-white {
+    background-color: #fff;
+}
+
+.ff-audio .rounded-left {
+    border-radius: 3px 0 0 3px;
+}
+
+.ff-audio .sb-soundplayer-progress-inner {
+    background-color: #fff;
+    height: 100%;
+    transition: width .2s ease-in;
+}
+
+.ff-audio .timer {
+    margin-left: 20px;
+}
