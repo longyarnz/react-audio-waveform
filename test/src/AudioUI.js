@@ -50,7 +50,7 @@ class AudioUI extends Component {
                     progressColor="#fff"
                 />
                 <div className="range-bar">
-                    <span className="range-bob" style={{ left }} />
+                    <span className="range-bob" style={{ left }} draggable={true} />
                 </div>
             </div>
         );
