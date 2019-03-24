@@ -309,3 +309,15 @@
 .ff-audio .timer {
     margin-left: 20px;
 }
+
+#root > div > div > div.flex.flex-center.px2.relative.z1{
+    justify-content: space-between;
+}
+
+#root > div > div > div.flex.flex-center.px2.relative.z1 > div:nth-child(3) > canvas{
+    width: 100% !important;
+}
+
+#root > div > div > div.flex.flex-center.px2.relative.z1 > div.sb-soundplayer-timer.timer{
+    min-width: 90px;
+}

@@ -19,7 +19,7 @@ export default class AudioUI extends Component {
 
     fetchAudioFile() {
         const { audioUrl } = this.props;
-        
+
         fetch(audioUrl)
             .then(response => response.arrayBuffer())
             .then(buffer => {

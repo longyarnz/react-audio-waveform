@@ -120,14 +120,14 @@ class AudioPlayer extends Component {
                             </ShouldRender>
 
                             <ShouldRender if={mediaIsLoaded}>
-                                <div>
-                                    <AudioUI 
-                                        duration={duration} 
-                                        currentTime={currentTime} 
+                                {/* <div> */}
+                                    <AudioUI
+                                        duration={duration}
+                                        currentTime={currentTime}
                                         handleWaveClick={secs => this.seek(secs)}
                                         audioUrl={this.props.mp3url || DEFAULT_MP3}
                                     />
-                                </div>
+                                {/* </div> */}
                             </ShouldRender>
 
                             <Timer
