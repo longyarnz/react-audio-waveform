@@ -20,6 +20,7 @@ class AudioPlayer extends Component {
         };
     }
 
+    //  handleMediaLoad: Updates state when audio media is loaded.
     handleMediaLoad() {
         this.seek();
         this.setState(e => (
@@ -120,14 +121,13 @@ class AudioPlayer extends Component {
                             </ShouldRender>
 
                             <ShouldRender if={mediaIsLoaded}>
-                                {/* <div> */}
-                                    <AudioUI
-                                        duration={duration}
-                                        currentTime={currentTime}
-                                        handleWaveClick={secs => this.seek(secs)}
-                                        audioUrl={this.props.mp3url || DEFAULT_MP3}
-                                    />
-                                {/* </div> */}
+                            {/* Add AudioUI component to draw waveform for audio media*/}
+                                <AudioUI
+                                    duration={duration || 0}
+                                    currentTime={currentTime || 0}
+                                    handleWaveClick={secs => this.seek(secs)}
+                                    audioUrl={this.props.mp3url || DEFAULT_MP3}
+                                />
                             </ShouldRender>
 
                             <Timer

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import WaveformData from 'waveform-data';
 import Waveform from 'react-audio-waveform';
+import PropTypes from 'prop-types';
 
-export default class AudioUI extends Component {
+class AudioUI extends Component {
     constructor(props) {
         super(props);
 
@@ -10,6 +11,7 @@ export default class AudioUI extends Component {
             waveform: null
         };
 
+        //  Bind class methods
         this.fetchAudioFile = this.fetchAudioFile.bind(this);
     }
 
@@ -17,6 +19,7 @@ export default class AudioUI extends Component {
         this.fetchAudioFile();
     }
 
+    //  Fetch audio media, calculate the waveform data and load the data into state
     fetchAudioFile() {
         const { audioUrl } = this.props;
 
@@ -32,20 +35,26 @@ export default class AudioUI extends Component {
     render() {
         const { waveform } = this.state;
         const { max = [] } = waveform || {};
-        return max.length === 0 ? (
-            <div>LOADING...</div>
-        )
-            : (
-                <Waveform
-                    barWidth={1}
-                    peaks={max}
-                    height={40}
-                    pos={this.props.currentTime}
-                    duration={this.props.duration}
-                    onClick={this.props.handleWaveClick}
-                    color="#bbc"
-                    progressColor="#fff"
-                />
-            );
+        return (
+            <Waveform
+                barWidth={1}
+                peaks={max}
+                height={40}
+                pos={this.props.currentTime}
+                duration={this.props.duration}
+                onClick={this.props.handleWaveClick}
+                color="#bbc"
+                progressColor="#fff"
+            />
+        );
     }
 }
+
+AudioUI.propTypes = {
+    audioUrl: PropTypes.string.isRequired,
+    duration: PropTypes.number.isRequired,
+    currentTime: PropTypes.number.isRequired,
+    handleWaveClick: PropTypes.func.isRequired
+};
+
+export default AudioUI;
