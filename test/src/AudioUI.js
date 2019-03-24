@@ -36,7 +36,7 @@ class AudioUI extends Component {
         const { waveform } = this.state;
         const { max = [] } = waveform || {};
         const { currentTime, duration, handleWaveClick } = this.props;
-        const left = `${currentTime / duration * 100}%`;
+        const left = `calc(${currentTime / duration * 100}% - 10px)`;
         return (
             <div style={{ position: 'relative' }}>
                 <Waveform
