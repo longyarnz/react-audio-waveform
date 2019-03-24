@@ -124,6 +124,7 @@ class AudioPlayer extends Component {
                                     <AudioUI 
                                         duration={duration} 
                                         currentTime={currentTime} 
+                                        handleWaveClick={secs => this.seek(secs)}
                                     />
                                 </div>
                             </ShouldRender>
