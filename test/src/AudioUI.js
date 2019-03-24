@@ -18,8 +18,9 @@ export default class AudioUI extends Component {
     }
 
     fetchAudioFile() {
-        const DEFAULT_MP3 = "https://parse-server-ff.s3.amazonaws.com/ae5992f0f5bb1f259bafa41b3771e3bb_call12565815456dwwwwww795896232www-01b59bd3.mp3";
-        fetch(DEFAULT_MP3)
+        const { audioUrl } = this.props;
+        
+        fetch(audioUrl)
             .then(response => response.arrayBuffer())
             .then(buffer => {
                 const waveform = WaveformData.create(buffer);

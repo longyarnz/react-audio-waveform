@@ -125,6 +125,7 @@ class AudioPlayer extends Component {
                                         duration={duration} 
                                         currentTime={currentTime} 
                                         handleWaveClick={secs => this.seek(secs)}
+                                        audioUrl={this.props.mp3url || DEFAULT_MP3}
                                     />
                                 </div>
                             </ShouldRender>
