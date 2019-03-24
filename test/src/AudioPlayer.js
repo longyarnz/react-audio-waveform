@@ -20,6 +20,15 @@ class AudioPlayer extends Component {
         };
     }
 
+    handleMediaLoad() {
+        this.seek();
+        this.setState(e => (
+            {
+                mediaIsLoaded: !e.mediaIsLoaded
+            }
+        ));
+    }
+
     seek(secs, play) {
         if (secs && secs.seek != null) secs = secs.seek();
         this.player.seek(secs);
@@ -101,7 +110,7 @@ class AudioPlayer extends Component {
                                 </button>
                             </div>
 
-                            <ShouldRender if={true}>
+                            <ShouldRender if={!mediaIsLoaded}>
                                 <Progress
                                     className="flex-auto bg-darken-3 rounded"
                                     innerClassName="rounded-left bg-white"
@@ -110,7 +119,7 @@ class AudioPlayer extends Component {
                                 />
                             </ShouldRender>
 
-                            <ShouldRender if={false}>
+                            <ShouldRender if={mediaIsLoaded}>
                                 <div>
                                     <AudioUI 
                                         duration={duration} 
