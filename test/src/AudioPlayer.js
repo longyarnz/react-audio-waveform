@@ -22,7 +22,7 @@ class AudioPlayer extends Component {
         if (secs && secs.seek != null) secs = secs.seek();
         this.player.seek(secs);
         let toSet = { currentTime: secs };
-        if (play == true) toSet.playing = true;
+        if (play === true) toSet.playing = true;
         this.setState(toSet);
     }
 
@@ -44,13 +44,13 @@ class AudioPlayer extends Component {
             let { mp3url } = this.props;
             if (this.player) {
                 let currentTime = this.player.seek();
-                const duration = mp3url == DEFAULT_MP3 ? DEFAULT_DURATION : this.player.duration();
+                const duration = mp3url === DEFAULT_MP3 ? DEFAULT_DURATION : this.player.duration();
                 const toSet = { currentTime };
                 if (!this.state.duration && duration != null) {
                     toSet.duration = duration;
                 }
                 if (duration != null) toSet.loadErr = false;
-                if (mp3url == DEFAULT_MP3 && currentTime >= DEFAULT_DURATION) {
+                if (mp3url === DEFAULT_MP3 && currentTime >= DEFAULT_DURATION) {
                     this.player.stop();
                     toSet.playing = false;
                     currentTime = 0;
@@ -76,35 +76,47 @@ class AudioPlayer extends Component {
         const { mp3url } = this.props;
         let { playing, currentTime, duration, speedup, loadErr } = this.state;
         if (this.isObject(currentTime)) currentTime = 0;
-        if (mp3url == DEFAULT_MP3) duration = DEFAULT_DURATION;
+        if (mp3url === DEFAULT_MP3) duration = DEFAULT_DURATION;
         return (
             <div className="ff-audio">
-                {duration != null ? <div className="flex flex-center px2 relative z1">
-                    <PlayButton
-                        playing={playing}
-                        onTogglePlay={() => this.setState({ playing: !playing })}
-                        className="flex-none h2 mr2 button button-transparent button-grow rounded"
-                    />
-                    {/* seeking={Boolean}
-                        seekingIcon={ReactElement} */}
+                {
+                    duration != null ? (
+                        <div className="flex flex-center px2 relative z1">
+                            <PlayButton
+                                playing={playing}
+                                onTogglePlay={() => this.setState({ playing: !playing })}
+                                className="flex-none h2 mr2 button button-transparent button-grow rounded"
+                            />
+                            {/* seeking={Boolean} seekingIcon={ReactElement} */}
 
-                    <div className="sb-soundplayer-volume mr2 flex flex-center">
-                        <button onClick={() => this.toggleRate()} className="sb-soundplayer-btn sb-soundplayer-volume-btn flex-none h2 button button-transparent button-grow rounded">
-                            <img className={speedup ? 'audio-speedup' : ""} src="/pane/speedup.svg" height={35} />
-                        </button>
-                    </div>
-                    <Progress
-                        className="flex-auto bg-darken-3 rounded"
-                        innerClassName="rounded-left bg-white"
-                        value={((currentTime || 0) / (duration || 1)) * 100 || 0}
-                        onSeekTrack={(ts) => this.seek(ts * duration)}
-                    />
+                            <div className="sb-soundplayer-volume mr2 flex flex-center">
+                                <button
+                                    onClick={() => this.toggleRate()}
+                                    className="sb-soundplayer-btn sb-soundplayer-volume-btn flex-none h2 button button-transparent button-grow rounded"
+                                >
+                                    <img className={speedup ? 'audio-speedup' : ""} src="/pane/speedup.svg" height={35} alt="speedup button" />
+                                </button>
+                            </div>
 
-                    <Timer
-                        className={"timer"}
-                        duration={duration} // in seconds
-                        currentTime={currentTime != null ? currentTime : 0} />
-                </div> : (loadErr ? <div style={{ padding: "5 20px" }}>Unable to load audio: {loadErr}</div> : <div className="progress"><div className="indeterminate" /></div>)}
+                            <Progress
+                                className="flex-auto bg-darken-3 rounded"
+                                innerClassName="rounded-left bg-white"
+                                value={((currentTime || 0) / (duration || 1)) * 100 || 0}
+                                onSeekTrack={(ts) => this.seek(ts * duration)}
+                            />
+
+                            <Timer
+                                className={"timer"}
+                                duration={duration} // in seconds
+                                currentTime={currentTime != null ? currentTime : 0}
+                            />
+                        </div>
+                    ) : (
+                            loadErr ?
+                                <div style={{ padding: "5 20px" }}>Unable to load audio: {loadErr}</div> :
+                                <div className="progress"><div className="indeterminate" /></div>
+                        )
+                }
                 <div>
                     <ReactHowler
                         src={mp3url}

@@ -2,7 +2,10 @@
 node_modules
 *.log
 
+
 .bundle.js
 bundle.js
 bundle.min.js
 lib
+yarn.lock
+*.mp3
