@@ -41,7 +41,7 @@ export default class AudioUI extends Component {
                     pos={this.props.currentTime}
                     duration={this.props.duration}
                     onClick={this.props.handleWaveClick}
-                    color="#ccc"
+                    color="#bbc"
                     progressColor="#fff"
                 />
             );
