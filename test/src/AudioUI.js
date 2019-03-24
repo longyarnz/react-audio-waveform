@@ -35,17 +35,24 @@ class AudioUI extends Component {
     render() {
         const { waveform } = this.state;
         const { max = [] } = waveform || {};
+        const { currentTime, duration, handleWaveClick } = this.props;
+        const left = `${currentTime / duration * 100}%`;
         return (
-            <Waveform
-                barWidth={1}
-                peaks={max}
-                height={40}
-                pos={this.props.currentTime}
-                duration={this.props.duration}
-                onClick={this.props.handleWaveClick}
-                color="#bbc"
-                progressColor="#fff"
-            />
+            <div style={{ position: 'relative' }}>
+                <Waveform
+                    barWidth={1.5}
+                    peaks={max}
+                    height={40}
+                    pos={currentTime}
+                    duration={duration}
+                    onClick={handleWaveClick}
+                    color="#bbc"
+                    progressColor="#fff"
+                />
+                <div className="range-bar">
+                    <span className="range-bob" style={{ left }} />
+                </div>
+            </div>
         );
     }
 }

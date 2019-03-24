@@ -107,7 +107,7 @@ class AudioPlayer extends Component {
                                     onClick={() => this.toggleRate()}
                                     className="sb-soundplayer-btn sb-soundplayer-volume-btn flex-none h2 button button-transparent button-grow rounded"
                                 >
-                                    <img className={speedup ? 'audio-speedup' : ""} src="/pane/speedup.svg" height={35} alt="speedup button" />
+                                    <img className={speedup ? 'audio-speedup' : ""} src="/pane/speedup.svg" height={35} alt="speedup button"  />
                                 </button>
                             </div>
 
