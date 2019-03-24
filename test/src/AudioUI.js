@@ -25,6 +25,7 @@ export default class AudioUI extends Component {
             .then(buffer => {
                 const waveform = WaveformData.create(buffer);
                 this.setState({ waveform });
+                console.log('Waveform Array Data:', waveform.max);
             });
     }
 
@@ -32,7 +33,7 @@ export default class AudioUI extends Component {
         const { waveform } = this.state;
         const { max = [] } = waveform || {};
         return max.length === 0 ? (
-            <div>Loading...</div>
+            <div>LOADING...</div>
         )
             : (
                 <Waveform
