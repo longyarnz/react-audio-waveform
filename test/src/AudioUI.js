@@ -13,10 +13,6 @@ export default class AudioUI extends Component {
         this.fetchAudioFile = this.fetchAudioFile.bind(this);
     }
 
-    handleClick(e) {
-        console.log('Clicked', e);
-    }
-
     componentDidMount() {
         this.fetchAudioFile();
     }
@@ -39,14 +35,13 @@ export default class AudioUI extends Component {
         )
             : (
                 <Waveform
-                    barWidth={4}
+                    barWidth={1}
                     peaks={max}
-                    height={100}
+                    height={40}
                     pos={this.props.currentTime}
                     duration={this.props.duration}
-                    onClick={this.handleClick}
                     color="#ccc"
-                    progressColor="#f00"
+                    progressColor="#fff"
                 />
             );
     }
