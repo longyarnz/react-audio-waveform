@@ -42,7 +42,7 @@ class AudioPlayer extends Component {
         let { speedup } = this.state;
         speedup = !speedup;
         this.setState({ speedup });
-        this.player._howler.rate(speedup ? 2.0 : 1.0);
+        this.player._howler.rate(speedup ? 1.15 : 1.0);
     }
 
     getState() {
@@ -153,6 +153,7 @@ class AudioPlayer extends Component {
                         }}
                         onLoad={(e) => this.handleMediaLoad(e)}
                         ref={(ref) => (this.player = ref)}
+                        volume={0.1}
                     />
                 </div>
             </div>
