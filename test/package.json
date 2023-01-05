@@ -7,7 +7,7 @@
         "react-audio-waveform": "^0.0.5",
         "react-dom": "^16.0.0",
         "react-howler": "^3.7.4",
-        "react-scripts": "1.0.17",
+        "react-scripts": "5.0.1",
         "react-soundplayer": "^1.0.4",
         "waveform-data": "^2.1.2"
     },
